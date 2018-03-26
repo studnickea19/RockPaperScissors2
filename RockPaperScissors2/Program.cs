@@ -10,6 +10,9 @@ namespace RockPaperScissors2
         {
             Game game = new Game();
             game.StartGame();
+
+            Computer computer = new Computer();
+            computer.TakeTurn();
         }
     }
 }
