@@ -32,16 +32,16 @@ namespace RockPaperScissors2
             {
                 if (gameStatus == "single")
                 {
-                    Player player1 = new Player("playerName", 0);
+                    Human player1 = new Human("playerName");
                     Human.setName();
-                    Player player2 = new Player("Computer", 0);
+                    Computer player2 = new Computer("playerName");
                     Computer.setName();
                 }
                 else if (gameStatus == "multiplayer")
                 {
-                    Player player1 = new Player("playerName", 0);
+                    Human player1 = new Human("playerName");
                     Human.setName();
-                    Player player2 = new Player("playerName", 0);
+                    Human player2 = new Human("playerName");
                     Human.setName();
                 }
                 else
@@ -49,9 +49,6 @@ namespace RockPaperScissors2
                     Console.WriteLine("Invalid entry, please enter 'single' or 'multiplayer'.");
                 }
             }
-
-
-
         }
     }
 }
