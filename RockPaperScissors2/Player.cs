@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections;
+using System.Collections.Generic;
 namespace RockPaperScissors2
 {
     abstract public class Player
@@ -18,7 +20,7 @@ namespace RockPaperScissors2
 
             public abstract string SetName();
 
-            //public string TakeTurn();
+            public abstract string TakeTurn();
 
     }
 }

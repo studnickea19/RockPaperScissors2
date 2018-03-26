@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections;
+using System.Collections.Generic;
 namespace RockPaperScissors2
 {
     public class Game
@@ -17,14 +19,11 @@ namespace RockPaperScissors2
 
         //MEMBER METHODS (CAN DO)
 
-        //void RunGame()
-        //{
         //    StartGame();            //Choose single/mulitplayer    
         //    //GetPlayers()          //get player names                  
         //    //get player choices
         //    //check winner
         //    //repeat, best 2 of three
-        //}
 
         public string StartGame()
         {
@@ -54,6 +53,8 @@ namespace RockPaperScissors2
             {
                 Console.WriteLine("Invalid entry, please enter 'single' or 'multiplayer'.");
             }
-            }
+
+
+        }
     }
 }

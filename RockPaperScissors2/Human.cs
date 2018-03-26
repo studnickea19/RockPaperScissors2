@@ -1,12 +1,13 @@
 ﻿using System;
+using System.Collections;
+using System.Collections.Generic;
 namespace RockPaperScissors2
 {
     public class Human : Player
     {
             //MEMBER VARIABLES (HAS A)
+            public string playerChoice;
 
-            public string playerName;
-            public int playerScore = 0;
 
             //CONSTRUCTOR (CREATE INSTANCE)
             public Human()
@@ -22,12 +23,14 @@ namespace RockPaperScissors2
                 return playerName;
             }
 
-            //public string TakeTurn()
-            //{
-                
-            //};
+		public override string TakeTurn()
+		{
+            Console.WriteLine("Please enter your selection: Rock, Paper, Scissors, Lizard, Spock");
+            playerChoice = Console.ReadLine().ToLower();
+            return playerChoice;
+		}
 
-    }
+	}
 }
 
 
