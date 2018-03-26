@@ -1,27 +1,24 @@
 ﻿using System;
 namespace RockPaperScissors2
 {
-    public class Player
+    abstract public class Player
     {
-        public Player()
-        {
             //MEMBER VARIABLES (HAS A)
 
             public string playerName;
-            public int playerScore = 0;
+            public int playerScore;
         
             //CONSTRUCTOR (CREATE INSTANCE)
 
-            public Player(string playerName)
+            public Player()
             {
-                this.playerName = playerName;
             }
 
             //MEMBER METHODS (CAN DO)
 
-            public void SetName();
+            public abstract string SetName();
 
             //public string TakeTurn();
-        }
+
     }
 }

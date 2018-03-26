@@ -3,30 +3,30 @@ namespace RockPaperScissors2
 {
     public class Human : Player
     {
-        public Human()
-        {
             //MEMBER VARIABLES (HAS A)
 
             public string playerName;
             public int playerScore = 0;
 
             //CONSTRUCTOR (CREATE INSTANCE)
+            public Human()
+            {
+            }
 
             //MEMBER METHODS (CAN DO)
 
-            public string SetName()
+            public override string SetName()
             {
                 Console.WriteLine("Player, please enter your name");
-                string player1name = Console.ReadLine().ToString();
-                return player1name;
-            };
+                playerName = Console.ReadLine().ToString();
+                return playerName;
+            }
 
             //public string TakeTurn()
             //{
                 
             //};
 
-        }
     }
 }
 

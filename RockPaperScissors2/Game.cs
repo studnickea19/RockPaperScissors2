@@ -2,7 +2,10 @@
 namespace RockPaperScissors2
 {
     public class Game
+
     {
+        Player player1;
+        Player player2;
         public Game()
         {
             //MEMBER VARIABLES (HAS A)
@@ -11,7 +14,7 @@ namespace RockPaperScissors2
 
             //MEMBER METHODS (CAN DO)
 
-            public void RunGame()
+            void RunGame()
             {
                 StartGame();            //Choose single/mulitplayer    
                 //GetPlayers()          //get player names                  
@@ -24,7 +27,7 @@ namespace RockPaperScissors2
             {
                 Console.WriteLine("Welcome to Rock, Paper, Scissors, Lizard, Spock. Please choose 'single' or 'multiplayer.'");
                 string gameStatus = Console.ReadLine().ToLower();
-                getPlayers(gameStatus);
+                GetPlayers(gameStatus);
                 return gameStatus;
             }
 
@@ -32,17 +35,17 @@ namespace RockPaperScissors2
             {
                 if (gameStatus == "single")
                 {
-                    Human player1 = new Human("playerName");
-                    Human.setName();
-                    Computer player2 = new Computer("playerName");
-                    Computer.setName();
+                    player1 = new Human();
+                    player1.SetName();
+                    player2 = new Computer();
+                    player2.SetName();
                 }
                 else if (gameStatus == "multiplayer")
                 {
-                    Human player1 = new Human("playerName");
-                    Human.setName();
-                    Human player2 = new Human("playerName");
-                    Human.setName();
+                    player1 = new Human();
+                    player1.SetName();
+                    player2 = new Human();
+                    player2.SetName();
                 }
                 else
                 {
