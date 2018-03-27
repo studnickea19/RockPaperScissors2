@@ -3,18 +3,17 @@ using System.Collections;
 using System.Collections.Generic;
 namespace RockPaperScissors2
 {
-    public class Rock : Gesture
+    public class Lizard : Gesture
     {
         //MEMBER VARIABLES (HAS A)
-        List<string> winItems = new List<string> { "scissors", "lizard" };
-        List<string> loseItems = new List<string> { "paper", "spock" };
+        List<string> winItems = new List<string> { "spock", "paper" };
+        List<string> loseItems = new List<string> { "scissors", "rock" };
 
         //CONSTRUCTOR
-        public Rock()
+        public Lizard()
         {
         }
 
         //MEMBER METHODS (CAN DO)
-
     }
 }

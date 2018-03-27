@@ -8,29 +8,33 @@ namespace RockPaperScissors2
         //MEMBER VARIABLES (HAS A)
         public Player player1;
         public Player player2;
-    
+
 
         //CONSTRUCTOR
         public Game()
-        {}
+        { }
 
         //MEMBER METHODS (CAN DO)
-
-        //    StartGame();            //Choose single/mulitplayer    
-        //    //GetPlayers()          //get player names                  
-        //    //player.TakeTurn();
-        //    //rock.decidewinner     //check winner
-        //    //repeat, best 2 of three
+        public void SetUpGame()
+        {
+            //StartGame();
+            string c = StartGame();
+            GetPlayers(c);
+            string d = GetPlayer1Choice();
+            string e = GetPlayer2Choice();
+            GetChoices(d, e);
+        }
 
         public string StartGame()
         {
-            Console.WriteLine("Welcome to Rock, Paper, Scissors, Lizard, Spock. Please choose 'single' or 'multiplayer.'");
+            Console.WriteLine("Please choose 'single' or 'multiplayer.'");
             string gameStatus = Console.ReadLine().ToLower();
             return gameStatus;
         }
 
         public void GetPlayers(string gameStatus)
         {
+            Console.WriteLine(gameStatus);
             if (gameStatus == "single")
             {
                 player1 = new Human();
@@ -47,11 +51,13 @@ namespace RockPaperScissors2
             }
             else
             {
-                Console.WriteLine("Invalid entry, please enter 'single' or 'multiplayer'.");
+                Console.WriteLine("Invalid entry");
+                string c = StartGame();
+                GetPlayers(c);
             }
         }
 
-        public void GetChoices()
+        public void GetChoices(string choice1, string choice2)
         {
             for (int turn = 1; turn <= 4; turn++)
             {
@@ -59,6 +65,7 @@ namespace RockPaperScissors2
                 {
                     GetPlayer1Choice();
                     GetPlayer2Choice();
+                    GetRoundResults(player1, player2, choice1, choice2);
                 }
                 else if (turn == 4)
                 {
@@ -67,16 +74,46 @@ namespace RockPaperScissors2
             }
         }
 
-        string GetPlayer1Choice()
+        public string GetPlayer1Choice()
         {
             string choice1 = player1.TakeTurn();
             return choice1;
         }
-         
-        string GetPlayer2Choice()
+
+        public string GetPlayer2Choice()
         {
             string choice2 = player2.TakeTurn();
             return choice2;
+        }
+
+        public void GetRoundResults(Player player1, Player player2, string choice1, string choice2)
+        {
+            switch (choice1)
+            {
+                case "rock":
+                    Rock rock = new Rock();
+;                   rock.DetermineScore(player1, player2, choice2);
+                    break;
+                case "paper":
+                    Paper paper = new Paper();
+                    paper.DetermineScore(player1, player2, choice2);
+                    break;
+                case "scissors":
+                    Scissors scissors = new Scissors();
+                    scissors.DetermineScore(player1, player2, choice2);
+                    break;
+                case "lizard":
+                    Lizard lizard = new Lizard();
+                    lizard.DetermineScore(player1, player2, choice2);
+                    break;
+                case "spock":
+                    Spock spock = new Spock();
+                    spock.DetermineScore(player1, player2, choice2);
+                    break;
+                default:
+                    Console.WriteLine("Invalid Entry, please choose Rock, Paper, Scissors, Lizard, or Spock");
+                    break;
+            }
         }
                 
         public void FinalScore()
@@ -89,24 +126,4 @@ namespace RockPaperScissors2
 
 
 
-                    //switch (choice1)
-                    //{
-                    //    case "rock":
-                    //        Rock rock.DetermineScore(player1, player2, choice2);
-                    //        break;
-                    //    //case "paper":
-                    //    //    paper.DetermineScore(player1, player2, choice2);
-                    //    //    break;
-                    //    //case "scissors":
-                    //    //    scissors.DetermineScore(player1, player2, choice2);
-                    //    //    break;
-                    //    //case "lizard":
-                    //    //    lizard.DetermineScore(player1, player2, choice2);
-                    //    //    break;
-                    //    //case "spock":
-                    //        //spock.DetermineScore(player1, player2, choice2);
-                    //        //break;
-                    //    default:
-                    //        Console.WriteLine("Invalid Entry, please choose Rock, Paper, Scissors, Lizard, or Spock");
-                    //        break;
-                    //}
+                    

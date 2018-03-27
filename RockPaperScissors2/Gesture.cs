@@ -15,5 +15,23 @@ namespace RockPaperScissors2
             return gestures;
         }
 
+        public void DetermineScore(Player player1, Player player2, string choice2)
+        {
+            if (winItems.Contains(choice2))
+            {
+                Console.WriteLine("{0} Wins!", player1.playerName);
+                player1.playerScore++;
+            }
+            else if (loseItems.Contains(choice2))
+            {
+                Console.WriteLine("{0} Wins!", player2.playerName);
+                player2.playerScore++;
+            }
+            else
+            {
+                Console.WriteLine("Draw!");
+            }
+        }
+
     }
 }

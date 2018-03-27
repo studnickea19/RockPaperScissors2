@@ -9,10 +9,9 @@ namespace RockPaperScissors2
         static void Main(string[] args)
         {
             Game game = new Game();
-            string c = game.StartGame();
-            game.GetPlayers(c);
-            game.GetChoices();
+            game.SetUpGame();
 
         }
+
     }
 }
