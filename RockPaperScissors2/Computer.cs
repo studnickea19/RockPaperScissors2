@@ -28,7 +28,6 @@ namespace RockPaperScissors2
             Random rnd = new Random();
             int index = rnd.Next(gestures.Count);
             computerChoice = ((string)gestures[index]);
-            //TEST Console.WriteLine((string)gestures[index]);
             return computerChoice;
         }
     }
