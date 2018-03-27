@@ -6,12 +6,10 @@ namespace RockPaperScissors2
     public class Computer : Player
     {
         //MEMBER VARIABLES (HAS A)
-        public Gesture gestureName;
 
         //CONSTRUCTOR (CREATE INSTANCE)
         public Computer()
         {
-           
         }
 
         //MEMBER METHODS (CAN DO)
@@ -21,41 +19,38 @@ namespace RockPaperScissors2
             playerName = "Computer";
             return playerName;
         }
-        public override string TakeTurn()
+        public override Gesture TakeTurn()
         {
             Gesture gesture = new Gesture();
             List<string> gestures = gesture.GetList();
             Random rnd = new Random();
             int index = rnd.Next(gestures.Count);
-            string compGesture = ((string)gestures[index]);
-            playerGesture = GetGesture(compGesture);
+            string inputGesture = ((string)gestures[index]);
+            playerGesture = GetGesture(inputGesture);
             return playerGesture;
         }
-        public Gesture GetGesture(string compGesture)
+
+        public override Gesture GetGesture(string inputGesture)
         {
-            switch(compGesture)
+            switch(inputGesture)
             {
                 case "rock":
                     playerGesture = new Rock();
                     return playerGesture;
-                    break;
                 case "paper":
                     playerGesture = new Paper();
                     return playerGesture;
-                    break;
                 case "scissors":
                     playerGesture = new Scissors();
                     return playerGesture;
-                    break;
                 case "lizard":
                     playerGesture = new Lizard();
                     return playerGesture;
-                    break;
                 case "spock":
                     playerGesture = new Spock();
                     return playerGesture;
-                    break;
             }
+            return playerGesture;
         }
     }
 }

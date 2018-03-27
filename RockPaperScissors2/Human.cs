@@ -22,12 +22,35 @@ namespace RockPaperScissors2
                 return playerName;
             }
 
-		public override string TakeTurn()
+        public override Gesture TakeTurn()
 		{
             Console.WriteLine("Please enter your selection: Rock, Paper, Scissors, Lizard, Spock");
-            playerGesture = Console.ReadLine().ToLower();
+            string inputGesture = Console.ReadLine().ToLower();
             return playerGesture;
 		}
+
+        public override Gesture GetGesture(string inputGesture)
+        {
+            switch (inputGesture)
+            {
+                case "rock":
+                    playerGesture = new Rock();
+                    return playerGesture;
+                case "paper":
+                    playerGesture = new Paper();
+                    return playerGesture;
+                case "scissors":
+                    playerGesture = new Scissors();
+                    return playerGesture;
+                case "lizard":
+                    playerGesture = new Lizard();
+                    return playerGesture;
+                case "spock":
+                    playerGesture = new Spock();
+                    return playerGesture;
+            }
+            return playerGesture;
+        }
 
 	}
 }

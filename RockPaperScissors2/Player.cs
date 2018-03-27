@@ -22,7 +22,9 @@ namespace RockPaperScissors2
 
             public abstract string SetName();
 
-            public abstract string TakeTurn();
+            public abstract Gesture TakeTurn();
+
+            public abstract Gesture GetGesture(string inputGesture);
 
     }
 }
