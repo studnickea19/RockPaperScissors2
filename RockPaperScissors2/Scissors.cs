@@ -5,10 +5,7 @@ namespace RockPaperScissors2
 {
     public class Scissors : Gesture
     {
-        //MEMBER VARIABLES (HAS A)
 
-
-        //CONSTRUCTOR
         public Scissors()
         {
             winItems = new List<string> { "paper", "lizard" };
@@ -16,6 +13,5 @@ namespace RockPaperScissors2
             gestureName = "scissors";
         }
 
-        //MEMBER METHODS (CAN DO)
     }
 }

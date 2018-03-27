@@ -5,19 +5,14 @@ namespace RockPaperScissors2
 {
     public class Game
     {
-        //MEMBER VARIABLES (HAS A)
         public Player player1;
         public Player player2;
 
-
-        //CONSTRUCTOR
         public Game()
         { }
 
-        //MEMBER METHODS (CAN DO)
         public void SetUpGame()
         {
-            //StartGame();
             string c = StartGame();
             GetPlayers(c);
             GetChoices(player1, player2);
@@ -66,7 +61,6 @@ namespace RockPaperScissors2
                 }
                 else if (turn == 3)
                 {
-                    //FinalScore();
                     string start = FinalScore();
                     PlayAgain(start);
                 }
