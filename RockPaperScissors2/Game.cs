@@ -32,7 +32,6 @@ namespace RockPaperScissors2
 
         public void GetPlayers(string gameStatus)
         {
-            Console.WriteLine(gameStatus);
             if (gameStatus == "single")
             {
                 player1 = new Human();
@@ -67,7 +66,9 @@ namespace RockPaperScissors2
                 }
                 else if (turn == 3)
                 {
-                    FinalScore();
+                    //FinalScore();
+                    string start = FinalScore();
+                    PlayAgain(start);
                 }
             }
         }
@@ -75,14 +76,12 @@ namespace RockPaperScissors2
         public Gesture GetPlayer1Choice(Player player1)
         {
             Gesture playerGesture = player1.TakeTurn();
-            Console.WriteLine("Player1 Gesture: {0}", player1.playerGesture);
             return player1.playerGesture;
         }
 
         public Gesture GetPlayer2Choice(Player player2)
         {
             Gesture playerGesture = player2.TakeTurn();
-            Console.WriteLine("Player2 Gesture: {0}", player2.playerGesture);
             return player2.playerGesture;
         }
 
@@ -90,25 +89,46 @@ namespace RockPaperScissors2
         {
             if (player1.playerGesture.winItems.Contains(player2.playerGesture.gestureName))
             {
+                Console.WriteLine("{0} Gesture: {1}", player1.playerName, player1.playerGesture);
+                Console.WriteLine("{0} Gesture: {1}", player2.playerName, player2.playerGesture);
                 Console.WriteLine("{0} Wins!", player1.playerName);
                 player1.playerScore++;
-                Console.WriteLine("Player1 Score: {0}",player1.playerScore);
+                Console.WriteLine("{0} Score: +1", player1.playerName);
             }
             else if (player1.playerGesture.loseItems.Contains(player2.playerGesture.gestureName))
             {
+                Console.WriteLine("{0} Gesture: {1}", player1.playerName, player1.playerGesture);
+                Console.WriteLine("{0} Gesture: {1}", player2.playerName, player2.playerGesture);
                 Console.WriteLine("{0} Wins!", player2.playerName);
                 player2.playerScore++;
-                Console.WriteLine("Player2 Score: {0}",player2.playerScore);
+                Console.WriteLine("{0} Score: +1", player2.playerName);
             }
             else
             {
+                Console.WriteLine("{0} Gesture: {1}", player1.playerName, player1.playerGesture);
+                Console.WriteLine("{0} Gesture: {1}", player2.playerName, player2.playerGesture);
                 Console.WriteLine("Draw!");
             }
 
         }
-        public void FinalScore()
+        public string FinalScore()
         {
             Console.WriteLine("{0} Score:{1}. {2} Score:{3} ", player1.playerName, player1.playerScore, player2.playerName, player2.playerScore);
+            Console.WriteLine("Enter 'Start' to play again");
+            string start = Console.ReadLine().ToLower();
+            return start;
+        }
+
+        public void PlayAgain(string start)
+        {
+            if(start == "start")
+            {
+                SetUpGame();
+            }
+            else
+            {
+                Console.WriteLine("Thanks for playing!");
+            }
         }
 
     }

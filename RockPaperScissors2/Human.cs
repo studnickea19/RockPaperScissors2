@@ -49,8 +49,11 @@ namespace RockPaperScissors2
                 case "spock":
                     playerGesture = new Spock();
                     return playerGesture;
+                default:
+                    Console.WriteLine("Invalid Entry");
+                    return TakeTurn();
             }
-            return playerGesture;
+            //return playerGesture;
         }
 
 	}
