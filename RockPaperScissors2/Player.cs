@@ -7,8 +7,10 @@ namespace RockPaperScissors2
     {
             //MEMBER VARIABLES (HAS A)
 
-            public string playerName;
-            public int playerScore;
+        public string playerName;
+        public int playerScore = 0;
+        public Gesture playerGesture;
+
         
             //CONSTRUCTOR (CREATE INSTANCE)
 

@@ -65,7 +65,7 @@ namespace RockPaperScissors2
                 {
                     GetPlayer1Choice();
                     GetPlayer2Choice();
-                    GetRoundResults(player1, player2, choice1, choice2);
+                    DetermineScore();
                 }
                 else if (turn == 4)
                 {
@@ -76,46 +76,33 @@ namespace RockPaperScissors2
 
         public string GetPlayer1Choice()
         {
-            string choice1 = player1.TakeTurn();
-            return choice1;
+            string playerGesture = player1.TakeTurn();
+            return playerGesture;
         }
 
         public string GetPlayer2Choice()
         {
-            string choice2 = player2.TakeTurn();
-            return choice2;
+            string playerGesture = player2.TakeTurn();
+            return playerGesture;
         }
 
-        public void GetRoundResults(Player player1, Player player2, string choice1, string choice2)
+        public void DetermineScore()
         {
-            switch (choice1)
+            if (player1.playerGesture.winItems.Contains(player2.playerGesture.gestureName))
             {
-                case "rock":
-                    Rock rock = new Rock();
-;                   rock.DetermineScore(player1, player2, choice2);
-                    break;
-                case "paper":
-                    Paper paper = new Paper();
-                    paper.DetermineScore(player1, player2, choice2);
-                    break;
-                case "scissors":
-                    Scissors scissors = new Scissors();
-                    scissors.DetermineScore(player1, player2, choice2);
-                    break;
-                case "lizard":
-                    Lizard lizard = new Lizard();
-                    lizard.DetermineScore(player1, player2, choice2);
-                    break;
-                case "spock":
-                    Spock spock = new Spock();
-                    spock.DetermineScore(player1, player2, choice2);
-                    break;
-                default:
-                    Console.WriteLine("Invalid Entry, please choose Rock, Paper, Scissors, Lizard, or Spock");
-                    break;
+                Console.WriteLine("{0} Wins!", player1.playerName);
+                player1.playerScore++;
+            }
+            else if (player1.playerGesture.loseItems.Contains(player2.playerGesture.gestureName))
+            {
+                Console.WriteLine("{0} Wins!", player2.playerName);
+                player2.playerScore++;
+            }
+            else
+            {
+                Console.WriteLine("Draw!");
             }
         }
-                
         public void FinalScore()
         {
             Console.WriteLine("{0} Score:{1}. {2} Score:{3} ", player1.playerName, player1.playerScore, player2.playerName, player2.playerScore);

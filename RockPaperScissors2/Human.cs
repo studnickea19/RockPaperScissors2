@@ -6,7 +6,6 @@ namespace RockPaperScissors2
     public class Human : Player
     {
             //MEMBER VARIABLES (HAS A)
-            public string playerChoice;
 
 
             //CONSTRUCTOR (CREATE INSTANCE)
@@ -26,8 +25,8 @@ namespace RockPaperScissors2
 		public override string TakeTurn()
 		{
             Console.WriteLine("Please enter your selection: Rock, Paper, Scissors, Lizard, Spock");
-            playerChoice = Console.ReadLine().ToLower();
-            return playerChoice;
+            playerGesture = Console.ReadLine().ToLower();
+            return playerGesture;
 		}
 
 	}

@@ -8,6 +8,7 @@ namespace RockPaperScissors2
         //MEMBER VARIABLES (HAS A)
         List<string> winItems = new List<string> { "paper", "lizard" };
         List<string> loseItems = new List<string> { "rock", "spock" };
+        public string gestureName = "scissors";
 
         //CONSTRUCTOR
         public Scissors()
