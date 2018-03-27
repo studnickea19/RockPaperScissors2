@@ -74,15 +74,15 @@ namespace RockPaperScissors2
             }
         }
 
-        public string GetPlayer1Choice()
+        public Gesture GetPlayer1Choice()
         {
-            string playerGesture = player1.TakeTurn();
+            Gesture playerGesture = player1.TakeTurn();
             return playerGesture;
         }
 
-        public string GetPlayer2Choice()
+        public Gesture GetPlayer2Choice()
         {
-            string playerGesture = player2.TakeTurn();
+            Gesture playerGesture = player2.TakeTurn();
             return playerGesture;
         }
 
