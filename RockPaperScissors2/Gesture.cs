@@ -5,9 +5,9 @@ namespace RockPaperScissors2
 {
     public class Gesture
     {
-        List<string> gestures = new List<string> { "rock", "paper", "scissors", "lizard", "spock" };
+        public List<string> gestures = new List<string> { "rock", "paper", "scissors", "lizard", "spock" };
         public List<string> winItems;
-        public List<string> loseItems;
+        public  List<string> loseItems;
         public string gestureName;
 
         public Gesture()

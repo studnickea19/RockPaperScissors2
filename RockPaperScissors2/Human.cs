@@ -26,6 +26,7 @@ namespace RockPaperScissors2
 		{
             Console.WriteLine("Please enter your selection: Rock, Paper, Scissors, Lizard, Spock");
             string inputGesture = Console.ReadLine().ToLower();
+            playerGesture = GetGesture(inputGesture);
             return playerGesture;
 		}
 

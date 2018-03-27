@@ -20,9 +20,7 @@ namespace RockPaperScissors2
             //StartGame();
             string c = StartGame();
             GetPlayers(c);
-            string d = GetPlayer1Choice();
-            string e = GetPlayer2Choice();
-            GetChoices(d, e);
+            GetChoices(player1, player2);
         }
 
         public string StartGame()
@@ -57,15 +55,16 @@ namespace RockPaperScissors2
             }
         }
 
-        public void GetChoices(string choice1, string choice2)
+        public void GetChoices(Player player1, Player player2)
         {
             for (int turn = 1; turn <= 4; turn++)
             {
                 if (turn < 4)
                 {
-                    GetPlayer1Choice();
-                    GetPlayer2Choice();
-                    DetermineScore();
+                    GetPlayer1Choice(player1);
+                    GetPlayer2Choice(player2);
+                    DetermineScore(player1, player2);
+                    turn++;
                 }
                 else if (turn == 4)
                 {
@@ -74,19 +73,19 @@ namespace RockPaperScissors2
             }
         }
 
-        public Gesture GetPlayer1Choice()
+        public Gesture GetPlayer1Choice(Player player1)
         {
             Gesture playerGesture = player1.TakeTurn();
-            return playerGesture;
+            return player1.playerGesture;
         }
 
-        public Gesture GetPlayer2Choice()
+        public Gesture GetPlayer2Choice(Player player2)
         {
             Gesture playerGesture = player2.TakeTurn();
-            return playerGesture;
+            return player2.playerGesture;
         }
 
-        public void DetermineScore()
+        public void DetermineScore(Player player1, Player player2)
         {
             if (player1.playerGesture.winItems.Contains(player2.playerGesture.gestureName))
             {
@@ -102,6 +101,7 @@ namespace RockPaperScissors2
             {
                 Console.WriteLine("Draw!");
             }
+
         }
         public void FinalScore()
         {

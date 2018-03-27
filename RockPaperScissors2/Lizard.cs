@@ -6,13 +6,14 @@ namespace RockPaperScissors2
     public class Lizard : Gesture
     {
         //MEMBER VARIABLES (HAS A)
-        List<string> winItems = new List<string> { "spock", "paper" };
-        List<string> loseItems = new List<string> { "scissors", "rock" };
-        public string gestureName = "lizard";
+
 
         //CONSTRUCTOR
         public Lizard()
         {
+            winItems = new List<string> { "spock", "paper" };
+            loseItems = new List<string> { "scissors", "rock" };
+            gestureName = "lizard";
         }
 
         //MEMBER METHODS (CAN DO)
